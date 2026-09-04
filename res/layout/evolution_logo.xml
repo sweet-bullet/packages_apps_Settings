@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: Evolution X
+     Copyright (C) 2019-2024 The Evolution X Project
      SPDX-License-Identifier: Apache-2.0
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/evolution_logo_container"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@android:color/transparent"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:selectable="false">
 
-    <com.android.settings.deviceinfo.firmwareversion.GlowView
-        android:id="@+id/evolution_rgb_glow"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp" />
-
-    <ImageView
-        android:id="@+id/evolution_logo_main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:src="@drawable/ic_evolution_logo_outline"
-        android:tint="?android:attr/textColorPrimary" />
-
-</FrameLayout>
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_evolution_logo"/>
+</LinearLayout>
