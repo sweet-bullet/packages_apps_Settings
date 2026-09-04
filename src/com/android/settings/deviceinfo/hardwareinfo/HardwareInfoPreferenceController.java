@@ -87,6 +87,18 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
     private static final String[] OTA_BRANCHES = { "cnb", "bka" };
 
     // -------------------------------------------------------------------------
+    // Unofficial/self-built fallback maintainer avatar
+    //
+    // The official OTA JSON path is the only one that ever resolves a GitHub
+    // username automatically. Unofficial builds have no JSON to read from, so
+    // there is nothing to fetch a username out of — it has to be hardcoded
+    // here instead. Set this to your own GitHub username so your avatar shows
+    // up on your self-built ROM. Leave it empty ("") to keep the previous
+    // behaviour (no avatar, name-only card) for unofficial builds.
+    // -------------------------------------------------------------------------
+    private static final String UNOFFICIAL_MAINTAINER_GITHUB = "HiroZukki";
+
+    // -------------------------------------------------------------------------
     // Disk-cache SharedPreferences name
     // -------------------------------------------------------------------------
 
@@ -534,6 +546,14 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
             if (badgeView != null) badgeView.setVisibility(View.GONE);
             final String donateUrl = UrlUtils.sanitizeUrl(overlayDonateUrl);
             setupChevronAndClick(card, chevron, displayName, null, donateUrl);
+
+            if (avatarView != null && !UNOFFICIAL_MAINTAINER_GITHUB.isEmpty()) {
+                loadGithubAvatar(layoutPref, UNOFFICIAL_MAINTAINER_GITHUB);
+                avatarView.setClickable(true);
+                avatarView.setFocusable(true);
+                avatarView.setOnClickListener(v ->
+                        openUrl("https://github.com/" + UNOFFICIAL_MAINTAINER_GITHUB));
+            }
         }
 
         card.setVisibility(View.VISIBLE);
