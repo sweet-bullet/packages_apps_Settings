@@ -77,7 +77,7 @@ public class HardwareInfoPreferenceController extends BasePreferenceController {
     private static final String EVO_IMAGE_URL =
             "https://raw.githubusercontent.com/Evolution-X/www_gitres/main/devices/images/%s.webp";
     private static final String LINEAGE_IMAGE_URL =
-            "https://raw.githubusercontent.com/LineageOS/lineage_wiki/main/images/devices/%s.png";
+            "https://raw.githubusercontent.com/LineageOS/lineage_wiki/main/images/devices/earth.png";
     private static final String EVO_OTA_URL =
             "https://raw.githubusercontent.com/Evolution-X/OTA/%s/builds/%s.json";
 
