@@ -8,7 +8,7 @@
     <bool name="config_show_vendor_patch_level" translatable="false">true</bool>
 
     <!-- Device image for HW info -->
-    <string name="config_deviceImageDrawable" translatable="false"></string>
+    <string name="config_deviceImageDrawable" translatable="false">device_lineage_earth</string>
 
     <!-- Uses the legacy UDFPS enrollment UI with side text instead of a footer button. -->
     <bool name="config_useLegacyUdfpsUi" translatable="false">false</bool>
